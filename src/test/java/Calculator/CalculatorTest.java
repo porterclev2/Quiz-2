@@ -19,9 +19,12 @@ public class CalculatorTest {
     }
     @Test
     public void testSubtract() {
-        int expected = -1;
-        int actual = calculator.subtract(1, 2);
-        assertEquals(expected, actual);
+        int positiveExpected = 3;
+        int negativeExpected = -1;
+        int zeroExpected = 0;
+        assertEquals(positiveExpected, calculator.subtract(1, -2));
+        assertEquals(negativeExpected, calculator.subtract(1, 2));
+        assertEquals(zeroExpected, calculator.subtract(1, 1));
     }
     @Test
     public void testMultiply() {
