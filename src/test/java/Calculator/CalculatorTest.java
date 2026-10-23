@@ -3,6 +3,8 @@ package quiz_2;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class CalculatorTest {
 
@@ -52,9 +54,9 @@ public class CalculatorTest {
     }
     @Test
     public void testIsEven(){
-        boolean expected = true;
-        boolean actual = calculator.isEven(2);
-        assertEquals(expected, actual);
+        assertTrue(calculator.isEven(2));
+        assertTrue(calculator.isEven(0));
+        assertFalse(calculator.isEven(3));
     }
     
 }
