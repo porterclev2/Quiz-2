@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class DateChecker {
    
     enum Month {
@@ -16,9 +18,14 @@ public class DateChecker {
     }
 
     private DateChecker.Month[] monthThirtyOneDays = {Month.JANUARY, Month.MARCH, Month.MAY,
-                                                        Month.JULY, Month.AUGUST, Month.DECEMBER};
+                                                        Month.JULY, Month.AUGUST, Month.OCTOBER, Month.DECEMBER};
 
     public boolean has31Days(Month month){
-        return false;
+        if(Arrays.asList(monthThirtyOneDays).contains(month)){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }
