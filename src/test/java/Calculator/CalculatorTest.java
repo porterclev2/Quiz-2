@@ -2,6 +2,7 @@ package quiz_2;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CalculatorTest {
 
@@ -35,9 +36,19 @@ public class CalculatorTest {
     }
     @Test
     public void testDivide() {
-        int expected = 1;
-        int actual = calculator.divide(2, 2);
-        assertEquals(expected, actual);
+        int positiveExpected = 2;
+        int negativeExpected = -2;
+        int zeroExpected = 0;
+        assertEquals(positiveExpected, calculator.divide(4, 2));
+        assertEquals(negativeExpected, calculator.divide(4, -2));
+        assertEquals(zeroExpected, calculator.divide(0, 2));
+    }
+    @Test
+    public void testDivideByZero() {
+        Exception exception = assertThrows(ArithmeticException.class, () -> {
+            calculator.divide(4, 0);
+        });
+        assertEquals("/ by zero", exception.getMessage());
     }
     @Test
     public void testIsEven(){
