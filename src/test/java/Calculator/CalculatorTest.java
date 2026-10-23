@@ -10,9 +10,12 @@ public class CalculatorTest {
 
     @Test
     public void testSum() {
-        int expected = 3;
-        int actual = calculator.sum(1, 2);
-        assertEquals(expected, actual);
+        int positiveExpected = 3;
+        int negativeExpected = -1;
+        int zeroExpected = 0;
+        assertEquals(positiveExpected, calculator.sum(1, 2));
+        assertEquals(negativeExpected, calculator.sum(1, -2));
+        assertEquals(zeroExpected, calculator.sum(1, -1));
     }
     @Test
     public void testSubtract() {

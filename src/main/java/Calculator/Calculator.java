@@ -2,7 +2,7 @@ package quiz_2;
 
 public class Calculator {
     public int sum(int x, int y){
-        return 0;
+        return x + y;
     }
     public int subtract(int x, int y){
         return 0;
