@@ -28,10 +28,11 @@ public class CalculatorTest {
     }
     @Test
     public void testMultiply() {
-        int expected = 2;
-        int actual = calculator.multiply(1, 2);
-        assertEquals(expected, actual);
-    }   
+        int negativeExpected = -4;
+        int zeroExpected = 0;
+        assertEquals(negativeExpected, calculator.multiply(2, -2));
+        assertEquals(zeroExpected, calculator.multiply(2, 0));
+    }
     @Test
     public void testDivide() {
         int expected = 1;
